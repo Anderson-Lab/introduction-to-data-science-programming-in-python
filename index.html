@@ -1,0 +1,652 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Introduction to Data Science Programming in Python by Anderson-Lab</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Introduction to Data Science Programming in Python</h1>
+        <p></p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/Anderson-Lab/introduction-to-data-science-programming-in-python" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/Anderson-Lab/introduction-to-data-science-programming-in-python/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/Anderson-Lab/introduction-to-data-science-programming-in-python/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>
+<a id="anderson-data-science-research-lab" class="anchor" href="#anderson-data-science-research-lab" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Anderson Data Science Research Lab</h1>
+
+<p align="justify">
+<a href="http://anderson-lab.github.io/"><img src="http://freyja.cs.cofc.edu/Paul-labs-logo.png" alt="Data Science Research Lab" height="100" align="right" hspace="10px"></a>The Anderson Data Science Research Lab applies and develops algorithms in data mining, machine learning, and artificial intelligence to the fields of big data, knowledge discovery, bioinformatics, genomics, and metabolomics. The material presented here is available under the MIT License. </p>
+
+<h1>
+<a id="lists" class="anchor" href="#lists" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Lists</h1>
+
+<p>Take-aways: Great for collecting items. Notice that you can mix types.</p>
+
+<div class="highlight highlight-source-python"><pre>mylist <span class="pl-k">=</span> [<span class="pl-c1">0</span>, <span class="pl-c1">3</span>, <span class="pl-c1">2</span>, <span class="pl-s"><span class="pl-pds">'</span>hi<span class="pl-pds">'</span></span>]
+mylist[<span class="pl-c1">0</span>] <span class="pl-k">=</span> <span class="pl-c1">2</span>
+<span class="pl-c1">print</span> mylist[<span class="pl-c1">0</span>]</pre></div>
+
+<pre><code>2
+</code></pre>
+
+<h2>
+<a id="making-a-copy" class="anchor" href="#making-a-copy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Making a Copy</h2>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-k">import</span> copy
+clist <span class="pl-k">=</span> copy.deepcopy(mylist) <span class="pl-c"># Necessary if you have nested objects</span></pre></div>
+
+<h2>
+<a id="slicing" class="anchor" href="#slicing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Slicing</h2>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-c1">print</span> mylist[<span class="pl-c1">2</span>:<span class="pl-c1">4</span>] <span class="pl-c"># Returns elements in index 2 and 3.</span>
+<span class="pl-c1">print</span> mylist[<span class="pl-c1">0</span>:<span class="pl-c1">4</span>:<span class="pl-c1">2</span>] <span class="pl-c"># mylist[start:end:step]</span>
+<span class="pl-c1">print</span> mylist[:] <span class="pl-c"># Returns the whole list and a shallow copy</span></pre></div>
+
+<pre><code>[2, 'hi']
+[2, 2]
+[2, 3, 2, 'hi']
+</code></pre>
+
+<h2>
+<a id="sorting" class="anchor" href="#sorting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sorting</h2>
+
+<div class="highlight highlight-source-python"><pre>mylist.sort()
+<span class="pl-c1">print</span> mylist</pre></div>
+
+<pre><code>[2, 2, 3, 'hi']
+</code></pre>
+
+<h2>
+<a id="other-functions" class="anchor" href="#other-functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Other functions</h2>
+
+<div class="highlight highlight-source-python"><pre>mylist.append(<span class="pl-c1">3</span>)
+<span class="pl-c1">print</span> mylist</pre></div>
+
+<pre><code>[2, 2, 3, 'hi', 3]
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-c1">print</span> mylist.count(<span class="pl-s"><span class="pl-pds">'</span>hi<span class="pl-pds">'</span></span>)
+<span class="pl-c1">print</span> mylist.count(<span class="pl-c1">3</span>)</pre></div>
+
+<pre><code>1
+2
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>otherlist <span class="pl-k">=</span> [<span class="pl-k">-</span><span class="pl-c1">1</span>,<span class="pl-k">-</span><span class="pl-c1">2</span>,<span class="pl-k">-</span><span class="pl-c1">3</span>]
+mylist.extend(otherlist)
+<span class="pl-c1">print</span> mylist</pre></div>
+
+<pre><code>[2, 2, 3, 'hi', 3, -1, -2, -3]
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>mylist.index(<span class="pl-c1">2</span>)</pre></div>
+
+<pre><code>0
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>mylist.index(<span class="pl-k">-</span><span class="pl-c1">5</span>)</pre></div>
+
+<pre><code>---------------------------------------------------------------------------
+
+ValueError                                Traceback (most recent call last)
+
+&lt;ipython-input-20-c383587f266d&gt; in &lt;module&gt;()
+----&gt; 1 mylist.index(-5)
+
+
+ValueError: -5 is not in list
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>mylist.insert(<span class="pl-c1">1</span>,<span class="pl-s"><span class="pl-pds">'</span>a<span class="pl-pds">'</span></span>)</pre></div>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-c1">print</span> mylist</pre></div>
+
+<pre><code>[2, 'a', 2, 3, 'hi', 3, -1, -2, -3]
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-c1">print</span> mylist.pop(<span class="pl-c1">1</span>)</pre></div>
+
+<pre><code>a
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-c1">print</span> mylist.remove(<span class="pl-s"><span class="pl-pds">'</span>hi<span class="pl-pds">'</span></span>)</pre></div>
+
+<pre><code>None
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-c1">print</span> mylist</pre></div>
+
+<pre><code>[2, 2, 3, 3, -1, -2, -3]
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>mylist.reverse()
+<span class="pl-c1">print</span> mylist</pre></div>
+
+<pre><code>[-3, -2, -1, 3, 3, 2, 2]
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>anotherlist <span class="pl-k">=</span> [<span class="pl-k">-</span><span class="pl-c1">3</span>,<span class="pl-k">-</span><span class="pl-c1">2</span>,<span class="pl-k">-</span><span class="pl-c1">1</span>,<span class="pl-c1">0</span>,<span class="pl-c1">0</span>,<span class="pl-k">-</span><span class="pl-c1">2</span>,<span class="pl-c1">2</span>]
+mylist <span class="pl-k">==</span> anotherlist</pre></div>
+
+<pre><code>False
+</code></pre>
+
+<h1>
+<a id="tuples" class="anchor" href="#tuples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tuples</h1>
+
+<p>A tuple is an immutable list (read-only, doesn't change). You can reference them in the same way as lists for the most part.</p>
+
+<div class="highlight highlight-source-python"><pre>mytuple <span class="pl-k">=</span> (<span class="pl-c1">0</span>, <span class="pl-c1">3</span>, <span class="pl-c1">2</span>, <span class="pl-s"><span class="pl-pds">'</span>h<span class="pl-pds">'</span></span>)
+<span class="pl-c1">print</span> mytuple[<span class="pl-c1">1</span>]</pre></div>
+
+<pre><code>3
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>mytuple[<span class="pl-c1">1</span>] <span class="pl-k">=</span> <span class="pl-c1">4</span></pre></div>
+
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-29-6b61a51d3ea0&gt; in &lt;module&gt;()
+----&gt; 1 mytuple[1] = 4
+
+
+TypeError: 'tuple' object does not support item assignment
+</code></pre>
+
+<h1>
+<a id="dictionaries" class="anchor" href="#dictionaries" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dictionaries</h1>
+
+<p>A dictionary is a key-value data structure that allows you to reference each element by a key.</p>
+
+<div class="highlight highlight-source-python"><pre>months <span class="pl-k">=</span> {<span class="pl-s"><span class="pl-pds">'</span>Jan<span class="pl-pds">'</span></span>: <span class="pl-c1">31</span>, <span class="pl-s"><span class="pl-pds">'</span>Feb<span class="pl-pds">'</span></span>: <span class="pl-c1">28</span>, <span class="pl-s"><span class="pl-pds">'</span>Mar<span class="pl-pds">'</span></span>: <span class="pl-c1">31</span>}
+<span class="pl-c1">print</span> months[<span class="pl-s"><span class="pl-pds">'</span>Jan<span class="pl-pds">'</span></span>]</pre></div>
+
+<pre><code>31
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-c1">print</span> months.keys()</pre></div>
+
+<pre><code>['Jan', 'Mar', 'Feb']
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-c1">print</span> months.items()</pre></div>
+
+<pre><code>[('Jan', 31), ('Mar', 31), ('Feb', 28)]
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-k">for</span> key <span class="pl-k">in</span> months:
+    <span class="pl-c1">print</span> key</pre></div>
+
+<pre><code>Jan
+Mar
+Feb
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-k">for</span> (key,value) <span class="pl-k">in</span> months.items():
+    <span class="pl-c1">print</span> key,value</pre></div>
+
+<pre><code>Jan 31
+Mar 31
+Feb 28
+</code></pre>
+
+<h1>
+<a id="a-quick-comparison-to-r-and-matlab" class="anchor" href="#a-quick-comparison-to-r-and-matlab" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>A quick comparison to R and MATLAB</h1>
+
+<ul>
+<li>Indexing starts at 0.</li>
+<li>All three are scripting languages.</li>
+<li>R and Python are open source and freely available languages.</li>
+<li>All three have a great set of available add-on packages.</li>
+</ul>
+
+<h1>
+<a id="writing-and-importing-code" class="anchor" href="#writing-and-importing-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Writing and Importing Code</h1>
+
+<p>Two ways to import code</p>
+
+<ul>
+<li>import name</li>
+<li>from name import *</li>
+</ul>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-k">import</span> sys
+sys.path.append(<span class="pl-s"><span class="pl-pds">'</span>mypath<span class="pl-pds">'</span></span>) <span class="pl-c"># Appends mypath to the system path.</span></pre></div>
+
+<h1>
+<a id="control-flow" class="anchor" href="#control-flow" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Control Flow</h1>
+
+<div class="highlight highlight-source-python"><pre>a <span class="pl-k">=</span> <span class="pl-c1">2</span>
+<span class="pl-k">if</span> a <span class="pl-k">==</span> <span class="pl-c1">1</span>:
+    <span class="pl-c1">print</span> <span class="pl-c1">1</span>
+<span class="pl-k">elif</span> a <span class="pl-k">==</span> <span class="pl-c1">2</span>:
+    <span class="pl-c1">print</span> <span class="pl-c1">2</span>
+<span class="pl-k">else</span>:
+    <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">'</span>otherwise<span class="pl-pds">'</span></span></pre></div>
+
+<pre><code>2
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-k">for</span> key <span class="pl-k">in</span> months:
+    <span class="pl-c1">print</span> key</pre></div>
+
+<pre><code>Jan
+Mar
+Feb
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>i <span class="pl-k">=</span> <span class="pl-c1">0</span>
+<span class="pl-k">while</span> i <span class="pl-k">&lt;</span> <span class="pl-c1">len</span>(mylist):
+    <span class="pl-c1">print</span> mylist[i]
+    i <span class="pl-k">=</span> i <span class="pl-k">+</span> <span class="pl-c1">1</span></pre></div>
+
+<pre><code>-3
+-2
+-1
+3
+3
+2
+2
+</code></pre>
+
+<h1>
+<a id="functions" class="anchor" href="#functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Functions</h1>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-k">def</span> <span class="pl-en">pythagoras</span>(<span class="pl-smi">x</span>,<span class="pl-smi">y</span>):
+    <span class="pl-s"><span class="pl-pds">"""</span> Computes the hypotenuse of two arguments<span class="pl-pds">"""</span></span>
+    h <span class="pl-k">=</span> <span class="pl-c1">pow</span>(x<span class="pl-k">**</span><span class="pl-c1">2</span><span class="pl-k">+</span>y<span class="pl-k">**</span><span class="pl-c1">2</span>,<span class="pl-c1">0.5</span>)
+    <span class="pl-k">return</span> h
+<span class="pl-c1">print</span> pythagoras(<span class="pl-c1">3</span>,<span class="pl-c1">4</span>)</pre></div>
+
+<pre><code>5.0
+</code></pre>
+
+<h1>
+<a id="map-and-lambda" class="anchor" href="#map-and-lambda" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Map and Lambda</h1>
+
+<ul>
+<li>If you want to apply the same function to a list of items, use Map</li>
+<li>If you want to create an anonymous and temporary function, use Lambda</li>
+</ul>
+
+<div class="highlight highlight-source-python"><pre>alist <span class="pl-k">=</span> [<span class="pl-c1">2</span>,<span class="pl-c1">3</span>,<span class="pl-c1">4</span>]
+<span class="pl-c1">map</span>(<span class="pl-k">lambda</span> <span class="pl-smi">x</span>:<span class="pl-c1">pow</span>(x,<span class="pl-c1">3</span>) <span class="pl-k">+</span> <span class="pl-c1">7</span>,alist)</pre></div>
+
+<pre><code>[15, 34, 71]
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-c1">filter</span>(<span class="pl-k">lambda</span> <span class="pl-smi">x</span>:x <span class="pl-k">&gt;</span> <span class="pl-c1">2</span>,alist)</pre></div>
+
+<pre><code>[3, 4]
+</code></pre>
+
+<h1>
+<a id="exceptions" class="anchor" href="#exceptions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Exceptions</h1>
+
+<div class="highlight highlight-source-python"><pre>x <span class="pl-k">=</span> <span class="pl-c1">1</span>
+y <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>a<span class="pl-pds">'</span></span>
+<span class="pl-k">try</span>:
+    x<span class="pl-k">/</span>y
+<span class="pl-k">except</span> <span class="pl-c1">ZeroDivisionError</span>:
+    <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>Divisor must not be 0<span class="pl-pds">"</span></span>
+<span class="pl-k">except</span> <span class="pl-c1">TypeError</span>:
+    <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>They must be numbers<span class="pl-pds">"</span></span>
+<span class="pl-k">except</span>:
+    <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>Something unspecified went wrong<span class="pl-pds">"</span></span>
+<span class="pl-k">else</span>:
+    <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>Everything worked!<span class="pl-pds">"</span></span></pre></div>
+
+<pre><code>They must be numbers
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>x <span class="pl-k">=</span> <span class="pl-c1">1</span>
+y <span class="pl-k">=</span> <span class="pl-c1">0</span>
+<span class="pl-k">try</span>:
+    x<span class="pl-k">/</span>y
+<span class="pl-k">except</span> <span class="pl-c1">ZeroDivisionError</span>:
+    <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>Divisor must not be 0<span class="pl-pds">"</span></span>
+<span class="pl-k">except</span> <span class="pl-c1">TypeError</span>:
+    <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>They must be numbers<span class="pl-pds">"</span></span>
+<span class="pl-k">except</span>:
+    <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>Something unspecified went wrong<span class="pl-pds">"</span></span>
+<span class="pl-k">else</span>:
+    <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>Everything worked!<span class="pl-pds">"</span></span></pre></div>
+
+<pre><code>Divisor must not be 0
+</code></pre>
+
+<h1>
+<a id="classes" class="anchor" href="#classes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Classes</h1>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-k">class</span> <span class="pl-en">CofC</span>:
+    <span class="pl-k">def</span> <span class="pl-c1">__init__</span>(<span class="pl-smi">self</span>,<span class="pl-smi">bestDept</span>):
+        <span class="pl-v">self</span>.bestDept <span class="pl-k">=</span> bestDept
+
+    <span class="pl-k">def</span> <span class="pl-en">whatIsTheBestDepartment</span>(<span class="pl-smi">self</span>):
+        <span class="pl-k">return</span> <span class="pl-v">self</span>.bestDept</pre></div>
+
+<div class="highlight highlight-source-python"><pre>univ <span class="pl-k">=</span> CofC(<span class="pl-s"><span class="pl-pds">'</span>Computer Science<span class="pl-pds">'</span></span>)
+<span class="pl-c1">print</span> univ.whatIsTheBestDepartment()</pre></div>
+
+<pre><code>Computer Science
+</code></pre>
+
+<h1>
+<a id="using-numpy-and-matplotlib" class="anchor" href="#using-numpy-and-matplotlib" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using NumPy and Matplotlib</h1>
+
+<ul>
+<li>Python isn't really good at numerical processing by default.</li>
+<li>That is why we use other packages.</li>
+</ul>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-k">import</span> numpy <span class="pl-k">as</span> np</pre></div>
+
+<h2>
+<a id="numpy-arrays" class="anchor" href="#numpy-arrays" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NumPy Arrays</h2>
+
+<div class="highlight highlight-source-python"><pre>myarray <span class="pl-k">=</span> np.array([<span class="pl-c1">4</span>,<span class="pl-c1">3</span>,<span class="pl-c1">2</span>])
+mybigarray <span class="pl-k">=</span> np.array([[<span class="pl-c1">3</span>,<span class="pl-c1">2</span>,<span class="pl-c1">4</span>],[<span class="pl-c1">3</span>,<span class="pl-c1">3</span>,<span class="pl-c1">2</span>],[<span class="pl-c1">4</span>,<span class="pl-c1">5</span>,<span class="pl-c1">2</span>]])</pre></div>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-c1">print</span> myarray</pre></div>
+
+<pre><code>[4 3 2]
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-c1">print</span> mybigarray</pre></div>
+
+<pre><code>[[3 2 4]
+ [3 3 2]
+ [4 5 2]]
+</code></pre>
+
+<p>mybigarray is an example of how we will create matrices</p>
+
+<h2>
+<a id="creation-functions" class="anchor" href="#creation-functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creation Functions</h2>
+
+<div class="highlight highlight-source-python"><pre>np.arange(<span class="pl-c1">5</span>)</pre></div>
+
+<pre><code>array([0, 1, 2, 3, 4])
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>np.arange(<span class="pl-c1">3</span>,<span class="pl-c1">7</span>,<span class="pl-c1">2</span>) <span class="pl-c"># start, stop, step</span></pre></div>
+
+<pre><code>array([3, 5])
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>np.ones((<span class="pl-c1">3</span>,<span class="pl-c1">4</span>))</pre></div>
+
+<pre><code>array([[ 1.,  1.,  1.,  1.],
+       [ 1.,  1.,  1.,  1.],
+       [ 1.,  1.,  1.,  1.]])
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>np.zeros((<span class="pl-c1">3</span>,<span class="pl-c1">4</span>))</pre></div>
+
+<pre><code>array([[ 0.,  0.,  0.,  0.],
+       [ 0.,  0.,  0.,  0.],
+       [ 0.,  0.,  0.,  0.]])
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>np.eye(<span class="pl-c1">3</span>)</pre></div>
+
+<pre><code>array([[ 1.,  0.,  0.],
+       [ 0.,  1.,  0.],
+       [ 0.,  0.,  1.]])
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>np.linspace(<span class="pl-c1">3</span>,<span class="pl-c1">7</span>,<span class="pl-c1">3</span>)</pre></div>
+
+<pre><code>array([ 3.,  5.,  7.])
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>np.linspace(<span class="pl-c1">3</span>,<span class="pl-c1">7</span>,<span class="pl-c1">5</span>)</pre></div>
+
+<pre><code>array([ 3.,  4.,  5.,  6.,  7.])
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>np.linspace(<span class="pl-c1">3</span>,<span class="pl-c1">7</span>,<span class="pl-c1">6</span>)</pre></div>
+
+<pre><code>array([ 3. ,  3.8,  4.6,  5.4,  6.2,  7. ])
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>np.r_[<span class="pl-c1">1</span>:<span class="pl-c1">4</span>,<span class="pl-c1">0</span>,<span class="pl-c1">4</span>] <span class="pl-c"># Row concatenation</span></pre></div>
+
+<pre><code>array([1, 2, 3, 0, 4])
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>np.c_[np.arange(<span class="pl-c1">3</span>),np.arange(<span class="pl-c1">3</span>)] <span class="pl-c"># Column concatenation</span></pre></div>
+
+<pre><code>array([[0, 0],
+       [1, 1],
+       [2, 2]])
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>np.size(np.eye(<span class="pl-c1">3</span>))</pre></div>
+
+<pre><code>9
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>np.shape(np.eye(<span class="pl-c1">3</span>))</pre></div>
+
+<pre><code>(3, 3)
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-c1">print</span> np.arange(<span class="pl-c1">6</span>)
+<span class="pl-c1">print</span> np.arange(<span class="pl-c1">6</span>).reshape(<span class="pl-c1">3</span>,<span class="pl-c1">2</span>)</pre></div>
+
+<pre><code>[0 1 2 3 4 5]
+[[0 1]
+ [2 3]
+ [4 5]]
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>np.ravel(np.eye(<span class="pl-c1">3</span>))</pre></div>
+
+<pre><code>array([ 1.,  0.,  0.,  0.,  1.,  0.,  0.,  0.,  1.])
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>np.arange(<span class="pl-c1">6</span>)[::<span class="pl-k">-</span><span class="pl-c1">1</span>] <span class="pl-c"># Reverse the order</span></pre></div>
+
+<pre><code>array([5, 4, 3, 2, 1, 0])
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>np.min(np.arange(<span class="pl-c1">6</span>))</pre></div>
+
+<pre><code>0
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>np.max(np.arange(<span class="pl-c1">6</span>))</pre></div>
+
+<pre><code>5
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>np.copy(np.arange(<span class="pl-c1">6</span>))</pre></div>
+
+<pre><code>array([0, 1, 2, 3, 4, 5])
+</code></pre>
+
+<h2>
+<a id="operations-on-arrays" class="anchor" href="#operations-on-arrays" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Operations on arrays</h2>
+
+<div class="highlight highlight-source-python"><pre>a<span class="pl-k">=</span>np.arange(<span class="pl-c1">6</span>).reshape(<span class="pl-c1">2</span>,<span class="pl-c1">3</span>)
+b<span class="pl-k">=</span>np.ones((<span class="pl-c1">2</span>,<span class="pl-c1">3</span>))
+<span class="pl-c1">print</span> a
+<span class="pl-c1">print</span> b</pre></div>
+
+<pre><code>[[0 1 2]
+ [3 4 5]]
+[[ 1.  1.  1.]
+ [ 1.  1.  1.]]
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>a<span class="pl-k">+</span>b</pre></div>
+
+<pre><code>array([[ 1.,  2.,  3.],
+       [ 4.,  5.,  6.]])
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>a<span class="pl-k">*</span>(b<span class="pl-k">+</span><span class="pl-c1">1</span>) <span class="pl-c"># Element wise operations!</span></pre></div>
+
+<pre><code>array([[  0.,   2.,   4.],
+       [  6.,   8.,  10.]])
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>np.dot(a,b) <span class="pl-c"># Matrix multiplication, but the dimensions don't agree!</span></pre></div>
+
+<pre><code>---------------------------------------------------------------------------
+
+ValueError                                Traceback (most recent call last)
+
+&lt;ipython-input-71-c8af594e789d&gt; in &lt;module&gt;()
+----&gt; 1 np.dot(a,b) # Matrix multiplication, but the dimensions don't agree!
+
+
+ValueError: shapes (2,3) and (2,3) not aligned: 3 (dim 1) != 2 (dim 0)
+</code></pre>
+
+<div class="highlight highlight-source-python"><pre>np.dot(np.transpose(a),b)</pre></div>
+
+<div class="highlight highlight-source-python"><pre>np.dot(a,np.transpose(b))</pre></div>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-c1">pow</span>(a,<span class="pl-c1">2</span>)</pre></div>
+
+<h2>
+<a id="random-numbers" class="anchor" href="#random-numbers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Random Numbers</h2>
+
+<div class="highlight highlight-source-python"><pre>np.random.rand(<span class="pl-c1">3</span>,<span class="pl-c1">2</span>) <span class="pl-c"># uniformly distributed random numbers between 0 and 1</span></pre></div>
+
+<div class="highlight highlight-source-python"><pre>np.random.randn(<span class="pl-c1">3</span>,<span class="pl-c1">2</span>) <span class="pl-c"># normally distributed</span></pre></div>
+
+<div class="highlight highlight-source-python"><pre>np.random.normal(<span class="pl-c1">1</span>,<span class="pl-c1">2</span>,(<span class="pl-c1">3</span>,<span class="pl-c1">2</span>)) <span class="pl-c"># with mean of 1 and standard deviation of 2</span></pre></div>
+
+<div class="highlight highlight-source-python"><pre>np.random.uniform(<span class="pl-k">-</span><span class="pl-c1">1</span>,<span class="pl-c1">3</span>,(<span class="pl-c1">3</span>,<span class="pl-c1">2</span>)) <span class="pl-c"># random uniform numbers between -1 and 3</span></pre></div>
+
+<div class="highlight highlight-source-python"><pre>np.random.randint(<span class="pl-c1">1</span>,<span class="pl-c1">10</span>,(<span class="pl-c1">3</span>,<span class="pl-c1">2</span>)) <span class="pl-c"># random integers between 1 and 10</span></pre></div>
+
+<h1>
+<a id="plotting-with-matplotlib-and-pylab" class="anchor" href="#plotting-with-matplotlib-and-pylab" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Plotting with MATPLOTLIB and PyLab</h1>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-k">import</span> matplotlib.pyplot <span class="pl-k">as</span> plt
+<span class="pl-k">import</span> numpy <span class="pl-k">as</span> np
+
+<span class="pl-c"># fake up some data</span>
+spread <span class="pl-k">=</span> np.random.rand(<span class="pl-c1">50</span>) <span class="pl-k">*</span> <span class="pl-c1">100</span>
+center <span class="pl-k">=</span> np.ones(<span class="pl-c1">25</span>) <span class="pl-k">*</span> <span class="pl-c1">50</span>
+flier_high <span class="pl-k">=</span> np.random.rand(<span class="pl-c1">10</span>) <span class="pl-k">*</span> <span class="pl-c1">100</span> <span class="pl-k">+</span> <span class="pl-c1">100</span>
+flier_low <span class="pl-k">=</span> np.random.rand(<span class="pl-c1">10</span>) <span class="pl-k">*</span> <span class="pl-k">-</span><span class="pl-c1">100</span>
+data <span class="pl-k">=</span> np.concatenate((spread, center, flier_high, flier_low), <span class="pl-c1">0</span>)</pre></div>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-c"># basic plot</span>
+plt.boxplot(data)<span class="pl-id">;</span>
+
+<span class="pl-c"># notched plot</span>
+plt.figure()
+plt.boxplot(data, <span class="pl-c1">1</span>)<span class="pl-id">;</span></pre></div>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-c"># change outlier point symbols</span>
+plt.figure()
+plt.boxplot(data, <span class="pl-c1">0</span>, <span class="pl-s"><span class="pl-pds">'</span>gD<span class="pl-pds">'</span></span>)<span class="pl-id">;</span></pre></div>
+
+<p><img src="output_91_0.png" alt="png"></p>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-c"># don't show outlier points</span>
+plt.figure()
+plt.boxplot(data, <span class="pl-c1">0</span>, <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>)<span class="pl-id">;</span>
+
+<span class="pl-c"># horizontal boxes</span>
+plt.figure()
+plt.boxplot(data, <span class="pl-c1">0</span>, <span class="pl-s"><span class="pl-pds">'</span>rs<span class="pl-pds">'</span></span>, <span class="pl-c1">0</span>)<span class="pl-id">;</span>
+
+<span class="pl-c"># change whisker length</span>
+plt.figure()
+plt.boxplot(data, <span class="pl-c1">0</span>, <span class="pl-s"><span class="pl-pds">'</span>rs<span class="pl-pds">'</span></span>, <span class="pl-c1">0</span>, <span class="pl-c1">0.75</span>)<span class="pl-id">;</span>
+
+<span class="pl-c"># fake up some more data</span>
+spread <span class="pl-k">=</span> np.random.rand(<span class="pl-c1">50</span>) <span class="pl-k">*</span> <span class="pl-c1">100</span>
+center <span class="pl-k">=</span> np.ones(<span class="pl-c1">25</span>) <span class="pl-k">*</span> <span class="pl-c1">40</span>
+flier_high <span class="pl-k">=</span> np.random.rand(<span class="pl-c1">10</span>) <span class="pl-k">*</span> <span class="pl-c1">100</span> <span class="pl-k">+</span> <span class="pl-c1">100</span>
+flier_low <span class="pl-k">=</span> np.random.rand(<span class="pl-c1">10</span>) <span class="pl-k">*</span> <span class="pl-k">-</span><span class="pl-c1">100</span>
+d2 <span class="pl-k">=</span> np.concatenate((spread, center, flier_high, flier_low), <span class="pl-c1">0</span>)
+data.shape <span class="pl-k">=</span> (<span class="pl-k">-</span><span class="pl-c1">1</span>, <span class="pl-c1">1</span>)
+d2.shape <span class="pl-k">=</span> (<span class="pl-k">-</span><span class="pl-c1">1</span>, <span class="pl-c1">1</span>)
+<span class="pl-c"># data = concatenate( (data, d2), 1 )</span>
+<span class="pl-c"># Making a 2-D array only works if all the columns are the</span>
+<span class="pl-c"># same length.  If they are not, then use a list instead.</span>
+<span class="pl-c"># This is actually more efficient because boxplot converts</span>
+<span class="pl-c"># a 2-D array into a list of vectors internally anyway.</span>
+data <span class="pl-k">=</span> [data, d2, d2[::<span class="pl-c1">2</span>, <span class="pl-c1">0</span>]]
+<span class="pl-c"># multiple box plots on one figure</span>
+plt.figure()
+plt.boxplot(data)<span class="pl-id">;</span></pre></div>
+
+<pre><code>---------------------------------------------------------------------------
+
+AttributeError                            Traceback (most recent call last)
+
+&lt;ipython-input-73-9744903c53b9&gt; in &lt;module&gt;()
+     17 flier_low = np.random.rand(10) * -100
+     18 d2 = np.concatenate((spread, center, flier_high, flier_low), 0)
+---&gt; 19 data.shape = (-1, 1)
+     20 d2.shape = (-1, 1)
+     21 # data = concatenate( (data, d2), 1 )
+
+
+AttributeError: 'list' object has no attribute 'shape'
+</code></pre>
+
+<p><img src="output_92_1.png" alt="png"></p>
+
+<p><img src="output_92_2.png" alt="png"></p>
+
+<p><img src="output_92_3.png" alt="png"></p>
+
+<h3>
+<a id="some-notes-on-plots-and-this-notebook" class="anchor" href="#some-notes-on-plots-and-this-notebook" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Some notes on plots and this notebook</h3>
+
+<ul>
+<li>The line at the top of this notebook is necessary to turn on inline plotting.</li>
+<li>The ; that are added on the end of the plots hide object output that is also echoed.</li>
+<li>For more examples, <a href="http://matplotlib.org/1.5.1/examples/index.html">http://matplotlib.org/1.5.1/examples/index.html</a>
+</li>
+</ul>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/Anderson-Lab">Anderson-Lab</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
